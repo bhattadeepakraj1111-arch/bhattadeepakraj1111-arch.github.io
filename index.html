@@ -3,375 +3,376 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Deepak Raj Bhatta | Healthcare IT Engineer</title>
-
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <style>
-
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            scroll-behavior:smooth;
-        }
-
-        body{
-            font-family:Arial, sans-serif;
-            background:#0b0f19;
-            color:white;
-            overflow-x:hidden;
-        }
-
-        /* Scroll Bar */
-
-        ::-webkit-scrollbar{
-            width:10px;
-        }
-
-        ::-webkit-scrollbar-thumb{
-            background:#00c3ff;
-            border-radius:20px;
-        }
-
-        /* Navigation */
-
-        nav{
-            position:fixed;
-            top:0;
-            width:100%;
-            padding:18px 7%;
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            background:rgba(0,0,0,0.55);
-            backdrop-filter:blur(10px);
-            z-index:1000;
-        }
-
-        nav h2{
-            color:#00c3ff;
-            font-size:28px;
-            letter-spacing:1px;
-        }
-
-        nav ul{
-            display:flex;
-            list-style:none;
-            gap:25px;
-            flex-wrap:wrap;
-        }
-
-        nav ul li a{
-            color:white;
-            text-decoration:none;
-            transition:0.3s;
-            font-size:15px;
-            position:relative;
-        }
-
-        nav ul li a:hover{
-            color:#00c3ff;
-        }
-
-        nav ul li a::after{
-            content:'';
-            width:0;
-            height:2px;
-            background:#00c3ff;
-            position:absolute;
-            left:0;
-            bottom:-5px;
-            transition:0.3s;
-        }
-
-        nav ul li a:hover::after{
-            width:100%;
-        }
-
-        /* Sections */
-
-        section{
-            min-height:100vh;
-            padding:120px 8%;
-            display:flex;
-            flex-direction:column;
-            justify-content:center;
-            align-items:center;
-            text-align:center;
-        }
-
-        /* Home */
-
-        #home{
-            background:
-            linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.7)),
-            url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2070');
-            background-size:cover;
-            background-position:center;
-            position:relative;
-        }
-
-        #home h1{
-            font-size:75px;
-            margin-bottom:20px;
-            animation:fadeUp 1.5s ease;
-        }
-
-        #home p{
-            font-size:24px;
-            line-height:1.8;
-            max-width:900px;
-            animation:fadeUp 2s ease;
-        }
-
-        .hero-highlight{
-            color:#00c3ff;
-        }
-
-        .btn{
-            margin-top:35px;
-            display:inline-block;
-            padding:16px 40px;
-            background:linear-gradient(45deg,#00c3ff,#0077ff);
-            border-radius:40px;
-            text-decoration:none;
-            color:white;
-            font-size:18px;
-            transition:0.4s;
-            box-shadow:0 0 20px rgba(0,195,255,0.5);
-        }
-
-        .btn:hover{
-            transform:translateY(-5px) scale(1.05);
-            box-shadow:0 0 35px rgba(0,195,255,0.8);
-        }
-
-        /* Headings */
-
-        h2{
-            font-size:50px;
-            margin-bottom:35px;
-            color:#00c3ff;
-        }
-
-        p{
-            font-size:19px;
-            line-height:1.9;
-            max-width:1100px;
-            margin-bottom:20px;
-        }
-
-        /* Cards */
-
-        .skills{
-            width:100%;
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-            gap:25px;
-            margin-top:50px;
-        }
-
-        .card{
-            background:rgba(255,255,255,0.05);
-            border:1px solid rgba(255,255,255,0.08);
-            padding:35px;
-            border-radius:25px;
-            transition:0.4s;
-            backdrop-filter:blur(5px);
-        }
-
-        .card:hover{
-            transform:translateY(-10px);
-            background:rgba(0,195,255,0.12);
-            box-shadow:0 0 25px rgba(0,195,255,0.3);
-        }
-
-        .card i{
-            font-size:45px;
-            margin-bottom:20px;
-            color:#00c3ff;
-        }
-
-        .card h3{
-            margin-bottom:15px;
-            font-size:25px;
-        }
-
-        /* Glass Box */
-
-        .glass{
-            background:rgba(255,255,255,0.05);
-            border:1px solid rgba(255,255,255,0.08);
-            padding:40px;
-            border-radius:30px;
-            margin-top:30px;
-            backdrop-filter:blur(10px);
-            width:100%;
-            max-width:1200px;
-        }
-
-        /* Gallery */
-
-        .gallery{
-            width:100%;
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-            gap:25px;
-            margin-top:40px;
-        }
-
-        .gallery img{
-            width:100%;
-            height:320px;
-            object-fit:cover;
-            border-radius:25px;
-            transition:0.5s;
-        }
-
-        .gallery img:hover{
-            transform:scale(1.05);
-        }
-
-        /* Contact */
-
-        .contact-wrapper{
-            width:100%;
-            display:flex;
-            gap:40px;
-            flex-wrap:wrap;
-            margin-top:40px;
-        }
-
-        .contact-box{
-            flex:1;
-            min-width:320px;
-            background:rgba(255,255,255,0.05);
-            padding:35px;
-            border-radius:25px;
-            text-align:left;
-            backdrop-filter:blur(10px);
-        }
-
-        .contact-box h3{
-            color:#00c3ff;
-            margin-bottom:25px;
-            font-size:30px;
-        }
-
-        .contact-box p{
-            margin-bottom:18px;
-            font-size:18px;
-        }
-
-        .contact-box a{
-            color:white;
-            text-decoration:none;
-        }
-
-        .contact-box a:hover{
-            color:#00c3ff;
-        }
-
-        iframe{
-            width:100%;
-            height:320px;
-            border:none;
-            border-radius:20px;
-            margin-top:20px;
-        }
-
-        /* Footer */
-
-        footer{
-            background:black;
-            padding:35px;
-            text-align:center;
-        }
-
-        .socials{
-            margin-bottom:20px;
-        }
-
-        .socials a{
-            color:white;
-            margin:0 12px;
-            font-size:25px;
-            transition:0.3s;
-        }
-
-        .socials a:hover{
-            color:#00c3ff;
-        }
-
-        /* Animation */
-
-        @keyframes fadeUp{
-
-            from{
-                opacity:0;
-                transform:translateY(40px);
-            }
-
-            to{
-                opacity:1;
-                transform:translateY(0);
-            }
-
-        }
-
-        /* Mobile */
-
-        @media(max-width:900px){
-
-            nav{
-                flex-direction:column;
-                gap:15px;
-            }
-
-            nav ul{
-                justify-content:center;
-            }
-
-            #home h1{
-                font-size:45px;
-            }
-
-            #home p{
-                font-size:18px;
-            }
-
-            h2{
-                font-size:36px;
-            }
-
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Deepak Raj Bhatta | Healthcare IT Engineer</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#0b0f19;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#00c3ff;
+    border-radius:20px;
+}
+
+/* Navbar */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,0.55);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+nav h2{
+    color:#00c3ff;
+    font-size:28px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+    position:relative;
+}
+
+nav ul li a:hover{
+    color:#00c3ff;
+}
+
+nav ul li a::after{
+    content:'';
+    width:0;
+    height:2px;
+    background:#00c3ff;
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    transition:0.3s;
+}
+
+nav ul li a:hover::after{
+    width:100%;
+}
+
+/* Sections */
+
+section{
+    min-height:100vh;
+    padding:120px 8%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+/* Hero */
+
+#home{
+    background:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.7)),
+    url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2070');
+    background-size:cover;
+    background-position:center;
+}
+
+#home h1{
+    font-size:75px;
+    margin-bottom:25px;
+    animation:fadeUp 1.5s ease;
+}
+
+#home p{
+    font-size:24px;
+    line-height:1.8;
+    max-width:900px;
+    animation:fadeUp 2s ease;
+}
+
+.hero-highlight{
+    color:#00c3ff;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:35px;
+    padding:16px 40px;
+    border-radius:40px;
+    text-decoration:none;
+    background:linear-gradient(45deg,#00c3ff,#0077ff);
+    color:white;
+    transition:0.4s;
+    box-shadow:0 0 25px rgba(0,195,255,0.5);
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 35px rgba(0,195,255,0.9);
+}
+
+/* Heading */
+
+h2{
+    font-size:50px;
+    margin-bottom:35px;
+    color:#00c3ff;
+}
+
+h3{
+    margin-bottom:20px;
+}
+
+p{
+    font-size:18px;
+    line-height:1.9;
+    max-width:1100px;
+    margin-bottom:20px;
+}
+
+/* Glass */
+
+.glass{
+    width:100%;
+    max-width:1200px;
+    padding:40px;
+    border-radius:30px;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    margin-top:30px;
+}
+
+/* Skills */
+
+.skills{
+    width:100%;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+    margin-top:50px;
+}
+
+.card{
+    background:rgba(255,255,255,0.05);
+    border-radius:25px;
+    padding:35px;
+    transition:0.4s;
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    background:rgba(0,195,255,0.12);
+    box-shadow:0 0 25px rgba(0,195,255,0.3);
+}
+
+.card i{
+    font-size:45px;
+    color:#00c3ff;
+    margin-bottom:20px;
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:18px;
+    margin-bottom:20px;
+}
+
+/* Gallery */
+
+.gallery{
+    width:100%;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+    margin-top:50px;
+}
+
+.gallery img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    border-radius:20px;
+    transition:0.5s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+/* Contact */
+
+.contact-wrapper{
+    width:100%;
+    display:flex;
+    gap:40px;
+    flex-wrap:wrap;
+    margin-top:40px;
+}
+
+.contact-box{
+    flex:1;
+    min-width:320px;
+    padding:35px;
+    border-radius:25px;
+    text-align:left;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+}
+
+.contact-box h3{
+    color:#00c3ff;
+    font-size:30px;
+    margin-bottom:25px;
+}
+
+.contact-box p{
+    margin-bottom:18px;
+}
+
+.contact-box a{
+    color:white;
+    text-decoration:none;
+}
+
+.contact-box a:hover{
+    color:#00c3ff;
+}
+
+iframe{
+    width:100%;
+    height:320px;
+    border:none;
+    border-radius:20px;
+    margin-top:20px;
+}
+
+/* Footer */
+
+footer{
+    background:black;
+    padding:35px;
+    text-align:center;
+}
+
+.socials{
+    margin-bottom:20px;
+}
+
+.socials a{
+    color:white;
+    font-size:25px;
+    margin:0 12px;
+    transition:0.3s;
+}
+
+.socials a:hover{
+    color:#00c3ff;
+}
+
+/* Animation */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* Mobile */
+
+@media(max-width:900px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav ul{
+        justify-content:center;
+    }
+
+    #home h1{
+        font-size:45px;
+    }
+
+    #home p{
+        font-size:18px;
+    }
+
+    h2{
+        font-size:36px;
+    }
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-<!-- Navigation -->
+<!-- Navbar -->
 
 <nav>
 
-    <h2>Deepak Raj</h2>
+<h2>Deepak Raj</h2>
 
-    <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#professional">Professional</a></li>
-        <li><a href="#personal">Personal</a></li>
-        <li><a href="#travel">Travel</a></li>
-        <li><a href="#motivation">Motivation</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+<ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#professional">Professional</a></li>
+    <li><a href="#personal">Personal</a></li>
+    <li><a href="#travel">Travel</a></li>
+    <li><a href="#motivation">Motivation</a></li>
+    <li><a href="#contact">Contact</a></li>
+</ul>
 
 </nav>
 
@@ -379,21 +380,23 @@
 
 <section id="home">
 
-    <h1>
-        Welcome To <span class="hero-highlight">My World</span>
-    </h1>
+<h1>
+    Welcome To <span class="hero-highlight">My World</span>
+</h1>
 
-    <p>
-        👋 Hello, I’m <b>Deepak Raj Bhatta</b><br><br>
+<p>
 
-        🇯🇵 Healthcare IT Engineer in Japan<br>
-        🖥 Infrastructure & DevOps Engineer<br>
-        🌍 Explorer | Traveler | Lifelong Learner
-    </p>
+    👋 Hello, I’m <b>Deepak Raj Bhatta</b><br><br>
 
-    <a href="#about" class="btn">
-        Explore My Journey 🚀
-    </a>
+    🇯🇵 Healthcare IT Engineer in Japan<br>
+    🖥 Infrastructure & DevOps Engineer<br>
+    🌍 Explorer | Traveler | Lifelong Learner
+
+</p>
+
+<a href="#about" class="btn">
+    Explore My Journey 🚀
+</a>
 
 </section>
 
@@ -401,52 +404,40 @@
 
 <section id="about">
 
-    <h2>👨‍💻 About Me</h2>
+<h2>👨‍💻 About Me</h2>
 
-    <div class="glass">
+<div class="glass">
 
-        <p>
+<p>
 
-            Hello, I’m <b>Deepak Raj Bhatta</b> from Nepal,
-            currently working in Japan in the Healthcare IT field.
+    Hello, I’m Deepak Raj Bhatta from Nepal,
+    currently working in Japan in the Healthcare IT field.
 
-        </p>
+</p>
 
-        <p>
+<p>
 
-            My journey combines Healthcare IT,
-            Infrastructure Engineering,
-            Networking,
-            DevOps,
-            Enterprise Integration,
-            and Continuous Learning.
+    My journey combines Healthcare IT,
+    Infrastructure Engineering,
+    Networking,
+    DevOps,
+    Enterprise Integration,
+    and Continuous Learning.
 
-        </p>
+</p>
 
-        <p>
+<p>
 
-            I enjoy solving technical challenges,
-            building reliable systems,
-            learning new technologies,
-            traveling,
-            trekking,
-            hiking,
-            and exploring different cultures.
+    I enjoy solving technical challenges,
+    learning new technologies,
+    traveling,
+    trekking,
+    hiking,
+    and exploring different cultures.
 
-        </p>
+</p>
 
-        <p>
-
-            Moving from Nepal to Japan completely changed
-            my perspective about life,
-            technology,
-            discipline,
-            culture,
-            and personal growth.
-
-        </p>
-
-    </div>
+</div>
 
 </section>
 
@@ -454,162 +445,113 @@
 
 <section id="professional">
 
-    <h2>💼 My Professional Life</h2>
+<h2>💼 My Professional Life</h2>
 
-    <div class="glass">
+<div class="glass">
 
-        <p>
+<p>
 
-            🇯🇵 Currently working in Japan in the Healthcare IT field,
-            supporting healthcare systems,
-            digital pathology environments,
-            HL7 integrations,
-            PACS environments,
-            XML integrations,
-            and infrastructure operations.
+    🇯🇵 Currently working in Japan in the Healthcare IT field,
+    supporting healthcare systems,
+    digital pathology environments,
+    HL7 integrations,
+    PACS environments,
+    XML integrations,
+    and infrastructure support.
 
-        </p>
+</p>
 
-        <p>
+<p>
 
-            I am currently working with
+    Currently working with
 
-            <a href="https://www.matsunami-glass.co.jp/"
-               target="_blank">
+    <a href="https://www.matsunami-glass.co.jp/"
+       target="_blank">
 
-               <b>Matsunami Glass Industry Co., Ltd.</b>
+       <b>Matsunami Glass Industry Co., Ltd.</b>
 
-            </a>
+    </a>
 
-            in healthcare-related technical operations,
-            infrastructure support,
-            and Healthcare IT environments.
+    in healthcare-related technical operations
+    and Healthcare IT environments.
 
-        </p>
+</p>
 
-    </div>
+</div>
 
-    <div class="glass">
+<div class="glass">
 
-        <p>
+<p>
 
-            🇳🇵 Before coming to Japan,
-            I worked in Nepal as an InfraDevOps Engineer
-            at <b>YCO Solutions Pvt. Ltd.</b>
+    🇳🇵 Before coming to Japan,
+    I worked in Nepal as an InfraDevOps Engineer
+    at <b>YCO Solutions Pvt. Ltd.</b>
 
-        </p>
+</p>
 
-        <p>
+<p>
 
-            I worked on the
+    I worked on the
 
-            <a href="https://nepalstock.com.np/" target="_blank">
-                Nepal Stock Exchange (NEPSE)
-            </a>
+    <a href="https://nepalstock.com.np/" target="_blank">
+        Nepal Stock Exchange (NEPSE)
+    </a>
 
-            infrastructure and related systems.
+    infrastructure and related systems.
 
-        </p>
+</p>
 
-        <p>
+<p>
 
-            My responsibilities included:
+    During work with YCO and NEPSE teams,
+    we supported more than 100+
+    Trading Management Systems (TMS)
+    running on separate infrastructures
+    for brokerage clients across Nepal.
 
-        </p>
+</p>
 
-        <p>
+</div>
 
-            ✔ Infrastructure Management<br>
-            ✔ VMware & Virtualization<br>
-            ✔ Database Operations<br>
-            ✔ Monitoring & Automation<br>
-            ✔ DevOps & CI/CD<br>
-            ✔ Firewall & Network Security<br>
-            ✔ High Availability Systems<br>
-            ✔ Disaster Recovery Support
+<div class="skills">
 
-        </p>
+<div class="card">
+    <i class="fas fa-server"></i>
+    <h3>Infrastructure</h3>
+    <p>VMware, ESXi, SAN Storage, Dell & HPE Servers</p>
+</div>
 
-        <p>
+<div class="card">
+    <i class="fas fa-network-wired"></i>
+    <h3>Networking</h3>
+    <p>FortiGate, Sophos, Routers, Firewalls</p>
+</div>
 
-            During work with the YCO & NEPSE team,
-            we supported more than <b>100+ broker
-            Trading Management Systems (TMS)</b>
-            running on individual infrastructures
-            for brokerage clients across Nepal.
+<div class="card">
+    <i class="fas fa-database"></i>
+    <h3>Databases</h3>
+    <p>MSSQL, PostgreSQL, Replication & AG</p>
+</div>
 
-        </p>
+<div class="card">
+    <i class="fas fa-code"></i>
+    <h3>DevOps</h3>
+    <p>Jenkins, GitLab, Docker, Kubernetes</p>
+</div>
 
-    </div>
+<div class="card">
+    <i class="fas fa-heartbeat"></i>
+    <h3>Healthcare IT</h3>
+    <p>HL7, PACS, IDS7, XML Workflow Integration</p>
+</div>
 
-    <!-- Skills -->
+<div class="card">
+    <i class="fas fa-chart-line"></i>
+    <h3>Monitoring</h3>
+    <p>Zabbix, Nagios, Cacti Monitoring</p>
+</div>
 
-    <div class="skills">
-
-        <div class="card">
-            <i class="fas fa-server"></i>
-            <h3>Infrastructure</h3>
-            <p>
-                VMware, ESXi, SAN Storage,
-                Dell & HPE Servers
-            </p>
-        </div>
-
-        <div class="card">
-            <i class="fas fa-network-wired"></i>
-            <h3>Networking</h3>
-            <p>
-                FortiGate, Sophos,
-                Routers, Switches,
-                Firewalls
-            </p>
-        </div>
-
-        <div class="card">
-            <i class="fas fa-database"></i>
-            <h3>Databases</h3>
-            <p>
-                MSSQL,
-                PostgreSQL,
-                Replication,
-                Always On AG
-            </p>
-        </div>
-
-        <div class="card">
-            <i class="fas fa-code"></i>
-            <h3>DevOps</h3>
-            <p>
-                Jenkins,
-                GitLab,
-                Docker,
-                Kubernetes
-            </p>
-        </div>
-
-        <div class="card">
-            <i class="fas fa-heartbeat"></i>
-            <h3>Healthcare IT</h3>
-            <p>
-                HL7,
-                PACS,
-                IDS7,
-                XML Workflow Integration
-            </p>
-        </div>
-
-        <div class="card">
-            <i class="fas fa-chart-line"></i>
-            <h3>Monitoring</h3>
-            <p>
-                Zabbix,
-                Nagios,
-                Cacti,
-                Infrastructure Monitoring
-            </p>
-        </div>
-
-    </div>
+</div>
 
 </section>
 
@@ -617,39 +559,39 @@
 
 <section id="personal">
 
-    <h2>🌿 My Personal Life</h2>
+<h2>🌿 My Personal Life</h2>
 
-    <div class="glass">
+<div class="glass">
 
-        <p>
+<p>
 
-            Beyond technology,
-            I enjoy nature,
-            trekking,
-            hiking,
-            traveling,
-            photography,
-            and exploring different cultures.
+    Beyond technology,
+    I enjoy nature,
+    trekking,
+    hiking,
+    photography,
+    food exploration,
+    and exploring different cultures.
 
-        </p>
+</p>
 
-        <p>
+<p>
 
-            I believe every difficult experience
-            teaches something important.
+    Moving from Nepal to Japan
+    changed my perspective about life,
+    discipline,
+    culture,
+    and personal growth.
 
-        </p>
+</p>
 
-        <p>
+<p>
 
-            My life journey from Nepal to Japan
-            helped me become stronger,
-            more disciplined,
-            and more adaptable.
+    I believe every challenge teaches something valuable.
 
-        </p>
+</p>
 
-    </div>
+</div>
 
 </section>
 
@@ -657,25 +599,173 @@
 
 <section id="travel">
 
-    <h2>🏔 Travel & Adventure</h2>
+<h2>🏔 Travel & Adventure</h2>
 
-    <p>
+<div class="glass">
 
-        Travel helps me refresh my mind,
-        gain new experiences,
-        and appreciate the beauty of life.
+<p>
 
-    </p>
+    Traveling is not only my hobby —
+    it is one of the biggest parts of my personal growth and happiness.
 
-    <div class="gallery">
+</p>
 
-        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1974">
+<p>
 
-        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070">
+    I love exploring mountains,
+    trekking routes,
+    hidden villages,
+    local cultures,
+    foods,
+    and meeting people from different backgrounds.
 
-        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=2070">
+</p>
 
-    </div>
+<p>
+
+    During trekking and hiking,
+    I enjoy adapting to local lifestyles,
+    understanding local traditions,
+    communicating with people,
+    and learning from their culture and feelings.
+
+</p>
+
+<p>
+
+    Those experiences give me peace,
+    motivation,
+    mental refreshment,
+    and positive energy.
+
+</p>
+
+</div>
+
+<div class="skills">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?q=80&w=2070">
+
+<h3>⛰ Mardi Himal Base Camp</h3>
+
+<p>
+
+    One of the most beautiful trekking experiences in Nepal.
+    Peaceful forest trails,
+    Himalayan views,
+    mountain villages,
+    and sunrise scenery made this trek unforgettable.
+
+</p>
+
+<a href="https://en.wikipedia.org/wiki/Mardi_Himal"
+target="_blank"
+class="btn">
+
+Explore Mardi Himal
+
+</a>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070">
+
+<h3>🏔 Tilicho Lake Trek</h3>
+
+<p>
+
+    Tilicho Lake Trek was one of the most adventurous
+    and challenging journeys I experienced.
+    High-altitude landscapes and glaciers were incredible.
+
+</p>
+
+<a href="https://en.wikipedia.org/wiki/Tilicho_Lake"
+target="_blank"
+class="btn">
+
+Explore Tilicho Lake
+
+</a>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=2070">
+
+<h3>🌄 Langtang Trek</h3>
+
+<p>
+
+    Langtang Trek gave me beautiful memories
+    of mountain villages,
+    peaceful trails,
+    Buddhist culture,
+    and local hospitality.
+
+</p>
+
+<a href="https://en.wikipedia.org/wiki/Langtang_National_Park"
+target="_blank"
+class="btn">
+
+Explore Langtang
+
+</a>
+
+</div>
+
+</div>
+
+<div class="glass">
+
+<h3 style="font-size:32px; color:#00c3ff; margin-bottom:20px;">
+
+🥾 Hiking Around Kathmandu Valley
+
+</h3>
+
+<p>
+
+    Besides long treks,
+    I also love short hiking routes around Kathmandu Valley.
+
+</p>
+
+<p>
+
+    Exploring hills,
+    forests,
+    temples,
+    villages,
+    sunrise viewpoints,
+    and local foods
+    always refreshes my mind and energy.
+
+</p>
+
+</div>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1974">
+
+<img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070">
+
+<img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=2070">
+
+<img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2071">
+
+<img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?q=80&w=1974">
+
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2070">
+
+</div>
 
 </section>
 
@@ -683,38 +773,38 @@
 
 <section id="motivation">
 
-    <h2>🔥 My Motivation</h2>
+<h2>🔥 My Motivation</h2>
 
-    <div class="glass">
+<div class="glass">
 
-        <p>
+<p>
 
-            I believe growth comes from:
-            discipline,
-            consistency,
-            honesty,
-            adaptability,
-            and continuous learning.
+    I believe growth comes from:
+    discipline,
+    consistency,
+    honesty,
+    adaptability,
+    and continuous learning.
 
-        </p>
+</p>
 
-        <p>
+<p>
 
-            Every challenge in life
-            becomes a lesson for the future.
+    Every challenge in life
+    becomes a lesson for the future.
 
-        </p>
+</p>
 
-        <p>
+<p>
 
-            My goal is continuous improvement —
-            professionally,
-            personally,
-            and spiritually.
+    My goal is continuous improvement —
+    professionally,
+    personally,
+    and spiritually.
 
-        </p>
+</p>
 
-    </div>
+</div>
 
 </section>
 
@@ -722,79 +812,75 @@
 
 <section id="contact">
 
-    <h2>📬 Contact Me</h2>
+<h2>📬 Contact Me</h2>
 
-    <div class="contact-wrapper">
+<div class="contact-wrapper">
 
-        <!-- Contact Details -->
+<div class="contact-box">
 
-        <div class="contact-box">
+<h3>📞 Contact Details</h3>
 
-            <h3>📞 Contact Details</h3>
+<p>
+📱
+<a href="tel:+819027839577">
++81 09027839577
+</a>
+</p>
 
-            <p>
-                📱
-                <a href="tel:+819027839577">
-                    +81 09027839577
-                </a>
-            </p>
+<p>
+📧
+<a href="mailto:bhattadeepakraj1111@gmail.com">
+bhattadeepakraj1111@gmail.com
+</a>
+</p>
 
-            <p>
-                📧
-                <a href="mailto:bhattadeepakraj1111@gmail.com">
-                    bhattadeepakraj1111@gmail.com
-                </a>
-            </p>
+<p>
+💻
+<a href="https://github.com/bhattadeepakraj1111-arch"
+target="_blank">
+GitHub Profile
+</a>
+</p>
 
-            <p>
-                💻
-                <a href="https://github.com/bhattadeepakraj1111-arch"
-                   target="_blank">
-                    GitHub Profile
-                </a>
-            </p>
+<p>
+🔗
+<a href="https://www.linkedin.com/in/deepak-raj-bhatta-712092275/"
+target="_blank">
+LinkedIn Profile
+</a>
+</p>
 
-            <p>
-                🔗
-                <a href="https://www.linkedin.com/in/deepak-raj-bhatta-712092275/"
-                   target="_blank">
-                    LinkedIn Profile
-                </a>
-            </p>
+</div>
 
-        </div>
+<div class="contact-box">
 
-        <!-- Address -->
+<h3>📍 My Address</h3>
 
-        <div class="contact-box">
+<p>
 
-            <h3>📍 My Address</h3>
+〒596-0003 Osaka, Kishiwada,<br>
+Nakaichō, 3-chōme−13−4
 
-            <p>
+</p>
 
-                〒596-0003 Osaka, Kishiwada,<br>
-                Nakaichō, 3-chōme−13−4
+<iframe
+src="https://www.google.com/maps?q=〒596-0003+Osaka,+Kishiwada,+Nakaichō,+3-chōme−13−4&output=embed">
+</iframe>
 
-            </p>
+<p style="margin-top:15px;">
 
-            <iframe
-                src="https://www.google.com/maps?q=〒596-0003+Osaka,+Kishiwada,+Nakaichō,+3-chōme−13−4&output=embed">
-            </iframe>
+<a href="https://www.google.com/maps/search/?api=1&query=〒596-0003+Osaka,+Kishiwada,+Nakaichō,+3-chōme−13−4"
+target="_blank">
 
-            <p style="margin-top:15px;">
+Open In Google Maps 🌍
 
-                <a href="https://www.google.com/maps/search/?api=1&query=〒596-0003+Osaka,+Kishiwada,+Nakaichō,+3-chōme−13−4"
-                   target="_blank">
+</a>
 
-                    Open In Google Maps 🌍
+</p>
 
-                </a>
+</div>
 
-            </p>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
@@ -802,31 +888,31 @@
 
 <footer>
 
-    <div class="socials">
+<div class="socials">
 
-        <a href="https://github.com/bhattadeepakraj1111-arch"
-           target="_blank">
-           <i class="fab fa-github"></i>
-        </a>
+<a href="https://github.com/bhattadeepakraj1111-arch"
+target="_blank">
+<i class="fab fa-github"></i>
+</a>
 
-        <a href="https://www.linkedin.com/in/deepak-raj-bhatta-712092275/"
-           target="_blank">
-           <i class="fab fa-linkedin"></i>
-        </a>
+<a href="https://www.linkedin.com/in/deepak-raj-bhatta-712092275/"
+target="_blank">
+<i class="fab fa-linkedin"></i>
+</a>
 
-        <a href="mailto:bhattadeepakraj1111@gmail.com">
-           <i class="fas fa-envelope"></i>
-        </a>
+<a href="mailto:bhattadeepakraj1111@gmail.com">
+<i class="fas fa-envelope"></i>
+</a>
 
-    </div>
+</div>
 
-    <p>
+<p>
 
-        © 2026 Deepak Raj Bhatta |
-        Healthcare IT Engineer |
-        Built With Passion 🚀
+© 2026 Deepak Raj Bhatta |
+Healthcare IT Engineer |
+Built With Passion 🚀
 
-    </p>
+</p>
 
 </footer>
 
